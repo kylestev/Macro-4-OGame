@@ -5,14 +5,13 @@ def get_file_contents(path):
     f = open(path, 'r')
     c = ''.join(f.readlines())
     f.close()
-    
+
     return c
 
 def main():
     files = [
         'proto',
         'buildable',
-        'entity_container',
         'levelable',
         'constants',
         'functions',
