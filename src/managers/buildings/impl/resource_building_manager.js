@@ -1,6 +1,6 @@
 var ResourceBuildingManager = new BuildingManager('Resources', 'resources');
 
-resources = [
+var res = [
     ['metal',       'mines',       'supply1' ],
     ['crystal',     'mines',       'supply2' ],
     ['deuterium',   'mines',       'supply3' ],
@@ -14,10 +14,10 @@ resources = [
     ['deuterium',   'storage_den', 'supply27']
 ];
 
-for (var i = resources.length - 1; i >= 0; i--) {
-    ResourceBuildingManager.addEntity(resources[i][0], resources[i][1], resources[i][2]);
+for (var i = res.length - 1; i >= 0; i--) {
+    ResourceBuildingManager.addEntity(res[i][0], res[i][1], res[i][2]);
 };
 
-resources = null;
+res = null;
 
 constants.managers.buildings.resources = ResourceBuildingManager;
