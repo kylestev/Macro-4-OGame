@@ -9,6 +9,7 @@ function BasicManager(name, page) {
         for (var i = this.entity_list.length - 1; i >= 0; i--) {
             if (this.entity_list[i].named == name) {
                 exists = true;
+                
                 break;
             }
         };
@@ -34,9 +35,9 @@ function BasicManager(name, page) {
         };
 
         return {
-            name: '',
-            level: -1,
-            className: ''
+            _name: '',
+            _level: -1,
+            _class: ''
         };
     };
 }
