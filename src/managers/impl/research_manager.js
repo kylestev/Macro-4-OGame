@@ -4,7 +4,6 @@ function ResearchManager () {
 };
 
 ResearchManager.inherits(BasicManager);
-ResearchManager.swiss(Levelable, 'getLevel');
 ResearchManagerImpl = new ResearchManager();
 
 var doubled = function (base_cost, next_level) {
