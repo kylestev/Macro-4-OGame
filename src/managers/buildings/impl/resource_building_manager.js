@@ -15,7 +15,9 @@ resources = [
 ];
 
 for (var i = resources.length - 1; i >= 0; i--) {
-    ResourceBuildingManager.addEntity( resources[i][0], resources[i][1], resources[i][2]);
+    ResourceBuildingManager.addEntity(resources[i][0], resources[i][1], resources[i][2]);
 };
+
+resources = null;
 
 constants.managers.buildings.resources = ResourceBuildingManager;
