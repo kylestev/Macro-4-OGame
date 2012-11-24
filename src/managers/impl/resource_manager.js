@@ -7,18 +7,6 @@ function ResourceManager() {
         energy:     'resources_energy'
     };
 
-    var velocities = {
-        metal: function (level) {
-            return Math.floor(constants.universe.speed * 30 * level * Math.pow(1.1, level));
-        },
-        crystal: function (level) {
-            return Math.floor(constants.universe.speed * 20 * level * Math.pow(1.1, level));
-        },
-        deuterium: function (level, temp_avg) {
-            return Math.floor(constants.universe.speed * (10 * level * Math.pow(1.1, level)) * (1.36 - 0.004 * temp_avg));
-        }
-    };
-
     var energyConsumptions = {
         metal: function (level) {
             return Math.ceil(10 * level * Math.pow(1.1, level));
@@ -28,6 +16,18 @@ function ResourceManager() {
         },
         deuterium: function (level) {
             return Math.ceil(20 * level * Math.pow(1.1, level));
+        }
+    };
+
+    var velocities = {
+        metal: function (level) {
+            return Math.floor(constants.universe.speed * 30 * level * Math.pow(1.1, level));
+        },
+        crystal: function (level) {
+            return Math.floor(constants.universe.speed * 20 * level * Math.pow(1.1, level));
+        },
+        deuterium: function (level, temp_avg) {
+            return Math.floor(constants.universe.speed * (10 * level * Math.pow(1.1, level)) * (1.36 - 0.004 * temp_avg));
         }
     };
 
@@ -51,6 +51,13 @@ function ResourceManager() {
         var className = this.resources[name];
         /* TODO: implement */
     };
+
+    this.getLevel = function () {
+        return parseInt($('.' + className + ' .level').text().replace($('.' + className + ' .textlabel').text(), ""));
+    };
 }
+
+ResourceManager.inherits(BuildingManager);
+ResourceManager.swiss('buildEntity', buildEntity);
 
 constants.managers.resources = new ResourceManager();

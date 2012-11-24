@@ -1,4 +1,5 @@
 function BuildingManager() { };
 
 BuildingManager.inherits(BasicManager);
-BuildingManager.swiss(Levelable, 'getLevel');
+BuildingManager.method('getLevel', getLevel);
+BuildingManager.method('buildEntity', buildEntity);
