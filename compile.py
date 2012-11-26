@@ -11,6 +11,7 @@ def get_file_contents(path):
 def main():
     files = [
         'proto',
+        'extensions',
         'buildable',
         'levelable',
         'constants',
