@@ -1,0 +1,18 @@
+{
+    "name": "Macro 4 OGame",
+    "version": "0.0.0.1",
+    "manifest_version": 2,
+
+    "description": "This will play and plan your OGame experience for you while you sit back and relax.",
+
+    "homepage_url": "https://kylestevenson.me/ogame",
+
+    "permissions": [
+        "notifications",
+        "tabs",
+        "http://*.ogame.org/*"
+    ],
+    "web_accessible_resources": [
+        "img/planet.png"
+    ]
+}
