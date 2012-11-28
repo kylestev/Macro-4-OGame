@@ -12,10 +12,10 @@ def main():
     files = [
         'proto',
         'extensions',
-        'buildable',
         'levelable',
         'constants',
         'functions',
+        'buildable',
         'planets',
         'managers/basic_manager',
         'managers/impl/research_manager',

@@ -1,3 +1,3 @@
-function IncorrectPageException() {
+function IncorrectPageException() { }
 
-}
+function PageNotFoundException() { }
