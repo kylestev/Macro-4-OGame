@@ -54,7 +54,6 @@ function getPlanets() {
 
         planet.name = $(this).find('.planetname').text().trim();
 
-
         planet.hasMoon = $(this).find('.moon[data-moon-id]').length == 1;
 
         if (planet.hasMoon) {
@@ -67,7 +66,11 @@ function getPlanets() {
 
         tooltip = getTooltipForElement($(this).find('.playername > a'));
 
-        planet.player.id         = parseInt(tooltip.find('.rank > a').text().trim());
+        try {
+            planet.player.id     = parseInt(tooltip.attr('id').substring(6));
+        } catch (e) { }
+
+        planet.player.rank       = parseInt(tooltip.find('.rank > a').text().trim());
         planet.player.name       = $(this).find('.playername > a > span').text().trim();
 
         planet.hasDebrisField    = $(this).find('.debris > a').length == 1;
@@ -84,10 +87,10 @@ function getPlanets() {
         if (planet.player.inAlliance) {
             tooltip = getTooltipForElement($(this).find('.allytag > span'));
 
-            planet.player.alliance.id      = parseInt(tooltip.find('.ListLinks > li:nth-child(3) > a').attr('href').substring(28));
+            planet.player.alliance.id      = parseInt(tooltip.attr('id').substring(8));
             planet.player.alliance.name    = tooltip.find('h1').text().trim();
             planet.player.alliance.rank    = parseInt(tooltip.find('.rank > a').text().trim());
-            planet.player.alliance.members = parseInt(tooltip.find('.members').text().trim().replace("Member: "));
+            planet.player.alliance.members = parseInt(tooltip.find('.members').text().trim().replace("Member: ", ""));
         }
 
         planet.player.flags.inactive     = $(this).find('.playername.inactive').length == 1;
@@ -104,5 +107,3 @@ function getPlanets() {
 function getTooltipForElement(el) {
     return $('#' + el.attr('rel'));
 }
-
-var planets = getPlanets();
